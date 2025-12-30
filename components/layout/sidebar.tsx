@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth-context"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { LayoutGrid, LayoutDashboard, User, LogOut } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -19,11 +20,14 @@ export function Sidebar() {
 
   return (
     <aside className="flex h-screen w-64 flex-col border-r border-border bg-card">
-      <div className="flex h-16 items-center gap-2 border-b border-border px-6">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-          <LayoutGrid className="h-5 w-5 text-primary-foreground" />
+      <div className="flex h-16 items-center justify-between gap-2 border-b border-border px-6">
+        <div className="flex items-center gap-2">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
+            <LayoutGrid className="h-5 w-5 text-primary-foreground" />
+          </div>
+          <span className="text-lg font-semibold">TaskFlow</span>
         </div>
-        <span className="text-lg font-semibold">TaskFlow</span>
+        <ThemeToggle />
       </div>
 
       <nav className="flex-1 space-y-1 p-4">
